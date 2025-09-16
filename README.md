@@ -26,7 +26,6 @@ QuickBites is a cloud-based food ordering system where users can browse a menu, 
    pip install -r requirements.txt
 
 ### 📦 Docker Instructions
-
 Build and run backend:
 
 ```bash
