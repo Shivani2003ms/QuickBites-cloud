@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: quickbites-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=<RDS_ENDPOINT_OR_LOCAL>
+      - DB_USER=admin
+      - DB_PASSWORD=<DB_PASSWORD>
+      - DB_NAME=quickbites
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: quickbites-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  db:
+    image: mysql:8
+    container_name: quickbites-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: quickbites
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: adminpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
