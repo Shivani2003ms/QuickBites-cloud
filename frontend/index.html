@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>QuickBites - Restaurant Ordering System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>🍔 QuickBites</h1>
+    <h2>Order Your Favorite Food Easily</h2>
+
+    <div id="menu" class="menu-container"></div>
+
+    <div id="cart" class="cart-container">
+        <h2>🛒 Your Cart</h2>
+        <div id="cart-items"></div>
+        <p><strong>Total: ₹<span id="total">0</span></strong></p>
+        <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <div id="order-status" class="order-status"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
